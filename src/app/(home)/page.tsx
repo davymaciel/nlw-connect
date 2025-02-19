@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import logo from '../assets/logo.svg'
-import { ArrowRight, Radio, User, Mail } from 'lucide-react';
-import { InputField, InputIcon, InputRoot } from '@/components/input';
-import { Button } from '@/components/button';
+import logo from '../../assets/logo.svg';
+import { Radio } from 'lucide-react';
+import { SubscriptionForm } from './subscription-form';
 
 export default function Home() {
   return (
-    <main className="max-w-[1240px] mx-auto pc-5 py-8 md:py-0">
+
       <div className="min-h-dvh flex justify-center gap-16 flex-col">
         <div className="flex flex-col gap-8 items-center md:items-start">
           <Image src={logo} alt='devstage' width={108.5} height={30} />
@@ -35,35 +34,8 @@ export default function Home() {
           <br />
           </p>
         </div>
-        <form className="bg-gray-700 border border-gray-600 rounded-2xl p-8 space-y-6 w-full md:max-w-[440px]">
-        <h2 className='font-heading font-semibold text-gray-200 text-xl'>
-              Inscrição
-            </h2>
-            <div className='space-y-3'>
-              <InputRoot>
-              <InputIcon>
-              <User />
-              </InputIcon>
-              <InputField type='text' placeholder='Nome completo' />
-              </InputRoot> 
-
-              <InputRoot>
-              <InputIcon>
-              <Mail />
-              </InputIcon>
-              <InputField type='email' placeholder='E-mail' />
-              </InputRoot> 
-            </div>
-
-            <Button type="submit">
-              Confirmar
-              <ArrowRight />
-            </Button>
-        </form>
+       <SubscriptionForm />
       </div>
       </div>
-
-      
-    </main>
   );
 }
